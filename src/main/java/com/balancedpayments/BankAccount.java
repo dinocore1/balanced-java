@@ -22,6 +22,7 @@ public class BankAccount extends Resource {
     public String verifications_uri;
     public BankAccountVerification.Collection verifications;
     public String verification_uri;
+    public Boolean is_valid;
     
     public static class Collection extends ResourceCollection<BankAccount> {
         public Collection(String uri) {
@@ -79,6 +80,7 @@ public class BankAccount extends Resource {
         verifications_uri = (String) payload.get("verifications_uri");
         verifications = new BankAccountVerification.Collection(verifications_uri);
         verification_uri = (String) payload.get("verification_uri");
+        is_valid = (Boolean) payload.get("is_valid");
     }
     
     public BankAccountVerification verify() throws HTTPError {
