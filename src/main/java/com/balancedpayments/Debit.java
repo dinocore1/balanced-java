@@ -30,6 +30,10 @@ public class Debit extends Resource  {
         }
     };
     
+    public Debit(String uri) throws HTTPError {
+    	super(uri);
+    }
+    
     public Debit() {
         super();
     }
